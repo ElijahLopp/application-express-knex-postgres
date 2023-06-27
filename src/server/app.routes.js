@@ -10,6 +10,10 @@ const { UpdateUserController } = require('./controllers/UpdateUserController');
 
 const appRoutes = Router();
 
+appRoutes.get('/', (req, res) => {
+  return res.send('OK');
+});
+
 appRoutes.post('/users', new CreateUserController().handle);
 appRoutes.get('/users', new GetAllUsersController().handle);
 appRoutes.get('/users/:id', new GetUserController().handle);
